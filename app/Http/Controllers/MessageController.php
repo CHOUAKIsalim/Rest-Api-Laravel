@@ -20,11 +20,11 @@ class MessageController extends Controller
     {
         if($request["creator"] == auth('api')->user()->email)
         {
-            return response()->json(['errors' => "You can not send a message to yourself"]);
+            return response()->json(['errors' => "You can not send a message to yourself"],422);
         }
         if($thread["creator"] != auth('api')->user()->id)
         {
-            return response()->json(['errors' => "This is not your thread"]);
+            return response()->json(['errors' => "This is not your thread"], 422);
         }
         $messageRequest["body"] = $request["message"];
         $messageRequest["creator"] = auth('api')->user()->id;
