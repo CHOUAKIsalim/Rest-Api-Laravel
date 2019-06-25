@@ -22,6 +22,10 @@ class MessageController extends Controller
         {
             return response()->json(['errors' => "You can not send a message to yourself"]);
         }
+        if($thread["creator"] != auth('api')->user()->id)
+        {
+            return response()->json(['errors' => "This is not your thread"]);
+        }
         $messageRequest["body"] = $request["message"];
         $messageRequest["creator"] = auth('api')->user()->id;
         $messageRequest['time'] = Carbon::now();

@@ -42,4 +42,14 @@ Abstract class CustomisedFormRequest extends FormRequest
         ], JsonResponse::HTTP_UNPROCESSABLE_ENTITY));
     }
 
+    public function expectsJson()
+    {
+        return true;
+    }
+
+    public function wantsJson()
+    {
+        return true;
+    }
+
 }
