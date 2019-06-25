@@ -30,7 +30,7 @@ class ThreadController extends Controller
 
         if($request['recipient'] == auth('api')->user()->email)
         {
-            return response()->json(['errors' => 'You can not send a message to yourself']);
+            return response()->json(['errors' => 'You can not send a message to yourself'],422);
         }
         $time= Carbon::now();
 
