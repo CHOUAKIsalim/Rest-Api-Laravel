@@ -19,8 +19,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::group(['middleware' => 'auth:api'], function(){
     Route::post("/threads/{thread}","MessageController@store");
-
-    Route::get('getUser', 'AuthController@getUser');
     Route::post("/threads","ThreadController@store");
 });
 
