@@ -1,3 +1,20 @@
+The Routes : 
+
+/api/register : to register, by passing : 'name', 'password' and 'email'
+/api/logn : to login, by passing : 'email' and 'password'  
+/api/getUser : only after login, to get the token of the current user
+/api/threads : only after login, to post, get and get_by_id a thread
+/api/threads/thread_id : only after login, to create a message that is affected to the thread
+
+First configure your sgbd in .env, than create the database backend-test. Than you will be able to run php artisan migrate to 
+create the tables. Next run php artisan db:seed to fill the data-base. 
+You can test the get routes without authentication, but to use the post ones you will have to register, than to login, than to 
+get the token, and finally to send the request.
+
+Uses Ramsey Library for Uuid, and passport for authentication
+
+
+
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
 <p align="center">
