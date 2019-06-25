@@ -1,20 +1,24 @@
 The Routes : 
 
-/api/register : to register, by passing : 'name', 'password' and 'email'
-/api/logn : to login, by passing : 'email' and 'password'  
-/api/getUser : only after login, to get the token of the current user
-/api/threads : only after login, to post, get and get_by_id a thread
-/api/threads/thread_id : only after login, to create a message that is affected to the thread
+post : /api/v1/register : to register, by passing : 'name', 'password' and 'email'
+post : /api/v1/login : to login, by passing : 'email' and 'password'  
+get : /api/v1/threads : to get the threads
+get : /api/v1/threads/thread_id : to get a thread by id
+post : /api/v1/threads : only after loging, to create a thread by passing : "subject", "recipient" and "message"
+post : /api/v1/threads/thread_id : only after login, to create a message that is affected to the thread_id
 
-First configure your sgbd in .env, than create the database backend-test. Than you will be able to run php artisan migrate to 
-create the tables. Next run php artisan db:seed to fill the data-base. 
+First rnn npm install and configure your sgbd in .env, than create the database backend-test. Than you will be able to run php artisan migrate to create the tables. Next run php artisan db:seed to fill the data-base. 
 
 To run the application, use php artisan serve
 
-You can test the get routes without authentication, but to use the post ones you will have to register, than to login, than to 
+You can test the get routes without authentication, but to use the post ones you will have to login, than to 
 get the token, and finally to send the request.
 
-Uses Ramsey Library for Uuid, and passport for authentication
+The Seeder creates this user : email : test@gmail.com;  password: 123456 
+so that you can test with it
+
+
+This project Uses Ramsey Library for Uuid, and passport for authentication
 
 
 
