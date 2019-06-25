@@ -8,6 +8,9 @@ The Routes :
 
 First configure your sgbd in .env, than create the database backend-test. Than you will be able to run php artisan migrate to 
 create the tables. Next run php artisan db:seed to fill the data-base. 
+
+To run the application, use php artisan serve
+
 You can test the get routes without authentication, but to use the post ones you will have to register, than to login, than to 
 get the token, and finally to send the request.
 
