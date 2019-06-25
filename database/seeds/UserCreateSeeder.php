@@ -21,5 +21,10 @@ class UserCreateSeeder extends Seeder
                 'email' => $faker->email
             ]);
         }
+        User::create([
+            'name' => 'test',
+            'email' => 'test@gmail.com',
+            'password' => bcrypt('123456')
+        ]);
     }
 }
